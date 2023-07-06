@@ -89,7 +89,7 @@ fun Screen4(navController: NavHostController) {
                         .height(75.dp)
                         .width(300.dp),
                     textStyle = TextStyle(fontSize = 30.sp),
-                    label = { Text(text = "Długość (m)", fontSize = 20.sp ) },
+                    label = { Text(text = "Długość przewodu (m)", fontSize = 20.sp ) },
                     )
                 OutlinedTextField(
                     value = sectionAreaInput,

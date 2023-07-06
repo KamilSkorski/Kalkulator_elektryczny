@@ -26,7 +26,6 @@ import androidx.navigation.NavHostController
 
 @Composable
 fun Screen1(navController: NavHostController) {
-    val bar = TopBarDetail()
     val keyboardController = LocalSoftwareKeyboardController.current
     var c1Input by remember { mutableStateOf("") }
     var c2Input by remember { mutableStateOf("") }
@@ -42,7 +41,7 @@ fun Screen1(navController: NavHostController) {
         topBar = {
             TopAppBarNavigation(
                 title = "Połączenie kondensatorów",
-                onBackClick = { navController.navigate(bar.navigate) }
+                onBackClick = { navController.navigate("home") }
             )
         }
     ) {
@@ -115,13 +114,6 @@ fun Screen1(navController: NavHostController) {
                     label = { Text(text = "C3 (μF)", fontSize = 20.sp ) },
 
                     )
-                /*
-                Button( onClick = { /*TODO*/ }, modifier = Modifier
-                    .width(200.dp)
-                    .height(75.dp)) {
-                    Text(text = "Oblicz", fontSize = 35.sp)
-                }
-                */
 
                 Text(text = "Pojemność zastępcza: ", fontWeight = FontWeight.Bold, fontSize = 35.sp,
                     modifier = Modifier.padding(top = 20.dp, bottom = 5.dp))

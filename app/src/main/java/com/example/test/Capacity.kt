@@ -23,7 +23,6 @@ import androidx.navigation.NavHostController
 
 @Composable
 fun Screen2(navController: NavHostController) {
-    val bar = TopBarDetail()
 
     val keyboardController = LocalSoftwareKeyboardController.current
     var r1Input by remember { mutableStateOf("") }
@@ -41,7 +40,7 @@ fun Screen2(navController: NavHostController) {
         topBar = {
             TopAppBarNavigation(
                 title = "Połączenie rezystorów",
-                onBackClick = { navController.navigate(bar.navigate) }
+                onBackClick = { navController.navigate("home") }
             )
         }
     ){

@@ -23,7 +23,7 @@ import androidx.navigation.NavHostController
 
 @Composable
 fun Screen3(navController: NavHostController) {
-    val bar = TopBarDetail()
+
     val selectedType = remember { mutableStateOf("Moc") }
 
     val keyboardController = LocalSoftwareKeyboardController.current
@@ -40,7 +40,7 @@ fun Screen3(navController: NavHostController) {
         topBar = {
             TopAppBarNavigation(
                 title = "Moc/Napięcie/Natężenie",
-                onBackClick = { navController.navigate(bar.navigate) }
+                onBackClick = { navController.navigate("home") }
             )
         }
     ) {
@@ -129,8 +129,7 @@ fun Screen3(navController: NavHostController) {
 
 fun calculateValue(c: Double, v: Double, p: Double, type: String ): String
 {
-    var value = 0.0
-    var stringValue :String
+    val value: Double
 
     if(type == "Moc")
     {
@@ -161,7 +160,7 @@ fun calculateValue(c: Double, v: Double, p: Double, type: String ): String
 
 fun roundValue(value : Double) : Double{
 
-    var roundedValue = (kotlin.math.round(value * 1000) / 1000)
+    val roundedValue = (kotlin.math.round(value * 1000) / 1000)
 
     return roundedValue
 }

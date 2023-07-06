@@ -27,7 +27,6 @@ val optionsMap = mutableMapOf(
 
 @Composable
 fun Screen4(navController: NavHostController) {
-    val bar = TopBarDetail()
     val keyboardController = LocalSoftwareKeyboardController.current
 
     val options = listOf("Miedź", "Aluminium")
@@ -49,7 +48,7 @@ fun Screen4(navController: NavHostController) {
         topBar = {
             TopAppBarNavigation(
                 title = "Rezystancja przewodów",
-                onBackClick = { navController.navigate(bar.navigate) }
+                onBackClick = { navController.navigate("home") }
             )
         }
     ) {
